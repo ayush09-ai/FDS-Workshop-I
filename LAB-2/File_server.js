@@ -13,11 +13,16 @@ async function createFile(content) {
 async function readFile() {
     try {
         const data=await fs.readFile(filepath,"utf8");
-        console.log("File ");
+        console.log("File content: ",data);
+        return data;
     } catch (err) {
-         console.error("Error creating file:",err);
+         console.error("Error occured");
     }
 }
 
 
-createFile("Welcome to backend programming");
+
+
+
+await createFile("Welcome to backend programming");
+await readFile();
