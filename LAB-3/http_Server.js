@@ -5,7 +5,10 @@ const server = http.createServer((req,res)=>{
     const method=req.method;
     if(url=='/msg' && method=='GET')
         res.end("This is welcome message from server")
-})
+    else if (url=="/sys" && method=="GET"){
+       res.end("This is system information");
+    }
+});
 server.listen(3000,()=>{
     console.log("Server is running on port : 3000");
 });
